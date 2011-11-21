@@ -63,12 +63,12 @@ The source code is available at http://github.com/saepia/rfc822.
 You can either clone the git repository or download a tarball or zip file.
 Once you have the source, you can unpack it and use from wherever you downloaded.
 
-= ChangeLog =
+= ChangeLog
 === 0.1.0
 
- * Added compatibility with Ruby 1.9
- * Added String#is_email?, String#contains_email? and String#scan_for_emails methods
+* Added compatibility with Ruby 1.9
+* Added String#is_email?, String#contains_email? and String#scan_for_emails methods
 
 === 0.2.0
 
- * Initial release
+* Initial release
