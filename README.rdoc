@@ -53,9 +53,19 @@ using the latest version of rubygems:
 
   $ gem update --system
 
-Then you can install the jack-ffi gem as follows:
+Then you can install the gem as follows:
 
   $ gem install rfc822
+
+=== Bundler
+
+Add to your Gemfile:
+
+  gem "rfc822", "~> 0.1.1"
+
+and then type:
+
+  bundle install
 
 === From the GitHub source
 
@@ -64,6 +74,10 @@ You can either clone the git repository or download a tarball or zip file.
 Once you have the source, you can unpack it and use from wherever you downloaded.
 
 = ChangeLog
+=== 0.1.1
+
+* Fixed description in the gem description
+
 === 0.1.0
 
 * Added compatibility with Ruby 1.9
