@@ -69,6 +69,6 @@ Once you have the source, you can unpack it and use from wherever you downloaded
 * Added compatibility with Ruby 1.9
 * Added String#is_email?, String#contains_email? and String#scan_for_emails methods
 
-=== 0.2.0
+=== 0.0.2
 
 * Initial release
