@@ -1,0 +1,65 @@
+= Introduction
+
+This is a simple gem for Ruby that simplifies validating email addresses. It conforms with RFC2822.
+
+Here comes a quick code sample. Currently no docs.
+
+  require 'rfc822'
+
+  # To test if whole string is an email... ugly way 
+  #  (returns 0 on success, nil on failure):
+
+  "tom@example.com" =~ RFC822::EMAIL_REGEXP_WHOLE
+
+  # or nice one (returns true/false):
+
+  "tom@example.com".is_email?
+
+
+  
+  # To test if string contains an email... ugly way 
+  #   (returns 0 on success, nil on failure):
+  
+  "demo john@example.comFooBar" =~ RFC822::EMAIL_REGEXP_PART
+
+  # or nice one (returns true/false):
+
+  "demo john@example.comFooBar".contains_email?
+
+
+
+  # To scan for emails within a string... ugly way 
+  #   (returns an array):
+  
+  "something a@example.com xyz".scan(RFC822::EMAIL_REGEXP_PART)
+
+  # or nice one (also returns an array):
+
+  "something a@example.com xyz".scan_for_emails
+
+
+
+  
+= Installation
+
+=== Ruby Versions
+
+Code was tested with ruby-1.8.7-p334 [ i386 ] and ruby-1.9.2-p180 [ i386 ] under RVM.
+
+=== Gems
+
+The gems are hosted at Rubygems.org[http://rubygems.org]. Make sure you're
+using the latest version of rubygems:
+
+  $ gem update --system
+
+Then you can install the jack-ffi gem as follows:
+
+  $ gem install rfc822
+
+=== From the GitHub source
+
+The source code is available at http://github.com/saepia/rfc822.
+You can either clone the git repository or download a tarball or zip file.
+Once you have the source, you can unpack it and use from wherever you downloaded.
+
