@@ -74,6 +74,10 @@ You can either clone the git repository or download a tarball or zip file.
 Once you have the source, you can unpack it and use from wherever you downloaded.
 
 = ChangeLog
+=== 0.1.2
+
+* Updated license
+
 === 0.1.1
 
 * Fixed description in the gem description
@@ -86,3 +90,7 @@ Once you have the source, you can unpack it and use from wherever you downloaded
 === 0.0.2
 
 * Initial release
+
+= License
+
+MIT
