@@ -61,7 +61,7 @@ Then you can install the gem as follows:
 
 Add to your Gemfile:
 
-  gem "rfc822", "~> 0.1.1"
+  gem "rfc822"
 
 and then type:
 
