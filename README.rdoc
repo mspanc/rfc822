@@ -74,7 +74,11 @@ You can either clone the git repository or download a tarball or zip file.
 Once you have the source, you can unpack it and use from wherever you downloaded.
 
 = ChangeLog
-=== 0.1.3
+=== 0.1.4
+
+* Fixed regression introduced in 0.1.3 that caused EMAIL_REGEXP_WHOLE to stop working properly.
+
+=== 0.1.3 (yanked)
 
 * [security] Updated regular expressions to use \A and \z instead of ^ and $ operators.
 
