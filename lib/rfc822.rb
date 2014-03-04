@@ -20,7 +20,7 @@ end
 class String
   def is_email?
     if RUBY_VERSION >= "1.9"
-      (self.force_encoding("BINARY") =~ RFC822::EMAIL_REGEXP_WHOLE) != nil
+      (self.dup.force_encoding("BINARY") =~ RFC822::EMAIL_REGEXP_WHOLE) != nil
     else
       (self =~ RFC822::EMAIL_REGEXP_WHOLE) != nil
     end
@@ -28,7 +28,7 @@ class String
 
   def contains_email?
     if RUBY_VERSION >= "1.9"
-      (self.force_encoding("BINARY") =~ RFC822::EMAIL_REGEXP_PART) != nil
+      (self.dup.force_encoding("BINARY") =~ RFC822::EMAIL_REGEXP_PART) != nil
     else
       (self =~ RFC822::EMAIL_REGEXP_PART) != nil
     end
@@ -36,7 +36,7 @@ class String
 
   def scan_for_emails
     if RUBY_VERSION >= "1.9"
-      self.force_encoding("BINARY").scan(RFC822::EMAIL_REGEXP_PART)
+      self.dup.force_encoding("BINARY").scan(RFC822::EMAIL_REGEXP_PART)
     else
       self.scan(RFC822::EMAIL_REGEXP_PART)
     end
