@@ -7,9 +7,10 @@ module RFC822
   DOMAIN_LITERAL = "\\x5b(?:#{DTEXT}|#{QUOTED_PAIR})*\\x5d"
   QUOTED_STRING = "\\x22(?:#{QTEXT}|#{QUOTED_PAIR})*\\x22"
   DOMAIN_REF = ATOM
+  TLD = "[\\x61-\\x7a]+"
   SUB_DOMAIN = "(?:#{DOMAIN_REF}|#{DOMAIN_LITERAL})"
   WORD = "(?:#{ATOM}|#{QUOTED_STRING})"
-  DOMAIN = "#{SUB_DOMAIN}(?:\\x2e#{SUB_DOMAIN})*"
+  DOMAIN = "#{SUB_DOMAIN}(?:\\x2e#{SUB_DOMAIN})*\\x2e#{TLD}"
   LOCAL_PART = "#{WORD}(?:\\x2e#{WORD})*"
   ADDR_SPEC = "#{LOCAL_PART}\\x40#{DOMAIN}"
 
