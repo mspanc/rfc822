@@ -9,7 +9,7 @@ Here comes a quick code sample. Currently no docs.
   # To test if whole string is an email... ugly way 
   #  (returns 0 on success, nil on failure):
 
-  "tom@example.com" =~ RFC822::EMAIL_REGEXP_WHOLE
+  "tom@example.com".dup.force_encoding("BINARY") =~ RFC822::EMAIL_REGEXP_WHOLE
 
   # or nice one (returns true/false):
 
@@ -20,7 +20,7 @@ Here comes a quick code sample. Currently no docs.
   # To test if string contains an email... ugly way 
   #   (returns 0 on success, nil on failure):
   
-  "demo john@example.comFooBar" =~ RFC822::EMAIL_REGEXP_PART
+  "demo john@example.comFooBar".dup.force_encoding("BINARY") =~ RFC822::EMAIL_REGEXP_PART
 
   # or nice one (returns true/false):
 
@@ -31,13 +31,13 @@ Here comes a quick code sample. Currently no docs.
   # To scan for emails within a string... ugly way 
   #   (returns an array):
   
-  "something a@example.com xyz".scan(RFC822::EMAIL_REGEXP_PART)
+  "something a@example.com xyz".dup.force_encoding("BINARY").scan(RFC822::EMAIL_REGEXP_PART)
 
   # or nice one (also returns an array):
 
   "something a@example.com xyz".scan_for_emails
 
-
+If you omit `.dup.force_encoding("BINARY")` part, you can run into exceptions if someone passes non-ASCII email (see https://github.com/mspanc/rfc822/issues/3).
 
   
 = Installation
