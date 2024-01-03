@@ -13,8 +13,8 @@ module RFC822
   LOCAL_PART = "#{WORD}(?:\\x2e#{WORD})*"
   ADDR_SPEC = "#{LOCAL_PART}\\x40#{DOMAIN}"
 
-  EMAIL_REGEXP_WHOLE = Regexp.new("\\A#{ADDR_SPEC}\\z", nil, 'n')
-  EMAIL_REGEXP_PART = Regexp.new("#{ADDR_SPEC}", nil, 'n')
+  EMAIL_REGEXP_WHOLE = Regexp.new("\\A#{ADDR_SPEC}\\z", Regexp::NOENCODING)
+  EMAIL_REGEXP_PART = Regexp.new("#{ADDR_SPEC}", Regexp::NOENCODING)
 end
 
 class String
